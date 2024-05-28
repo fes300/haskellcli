@@ -1,5 +1,5 @@
 {
-  description = "srid/haskell-template: Nix template for Haskell projects";
+  description = "srid/haskellcli: Nix template for Haskell projects";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     systems.url = "github:nix-systems/default";
@@ -29,7 +29,7 @@
             root = ./.;
             fileset = lib.fileset.unions [
               ./src
-              ./haskell-template.cabal
+              ./haskellcli.cabal
               ./LICENSE
               ./README.md
             ];
@@ -51,7 +51,7 @@
           # Add your package overrides here
           settings = {
             /*
-            haskell-template = {
+            haskellcli = {
               haddock = false;
             };
             aeson = {
@@ -96,12 +96,12 @@
         };
 
         # Default package & app.
-        packages.default = self'.packages.haskell-template;
-        apps.default = self'.apps.haskell-template;
+        packages.default = self'.packages.haskellcli;
+        apps.default = self'.apps.haskellcli;
 
         # Default shell.
         devShells.default = pkgs.mkShell {
-          name = "haskell-template";
+          name = "haskellcli";
           meta.description = "Haskell development environment";
           # See https://community.flake.parts/haskell-flake/devshell#composing-devshells
           inputsFrom = [
