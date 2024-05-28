@@ -77,16 +77,22 @@ common shared
   build-depends:
     , aeson
     , async
-    , base          >=4   && <5
+    , base           >=4   && <5
+    , brick          >=2
     , data-default
     , directory
     , filepath
+    , microlens
+    , microlens-mtl
     , mtl
     , optics-core
     , profunctors
-    , relude        >=1.0
+    , relude         >=1.0
     , shower
     , time
+    , vector
+    , vty            >=6.0
+    , vty-unix
     , with-utf8
 
   hs-source-dirs:     src
